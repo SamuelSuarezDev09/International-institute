@@ -1,0 +1,75 @@
+---
+import "../styles/global.css";
+import Logo from "../assets/logo.jpeg"
+---
+
+<header id="main-header" class="bg-black w-full text-white py-4 px-6 fixed z-50 transition-all duration-300">
+	<div class="max-w-7xl mx-auto flex items-center justify-between">
+	  <div class="flex items-center space-x-4">
+		<div class="flex items-center space-x-2">
+		  <div class="w-40 h-40 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center">
+			<img class="w-40 h-40 rounded-md object-cover" src={Logo.src} alt="">
+		  </div>
+		</div>
+	  </div>
+
+	  <nav class="hidden md:flex items-center space-x-8">
+		<a href="#inicio" class="hover:text-yellow-400 transition-colors">
+		  Inicio
+		</a>
+		<a href="#programas" class="hover:text-yellow-400 transition-colors">
+		  Programas
+		</a>
+		<a href="#recursos" class="hover:text-yellow-400 transition-colors">
+		  Recursos
+		</a>
+		<a href="#nosotros" class="hover:text-yellow-400 transition-colors">
+		  Nosotros
+		</a>
+		<a href="#contacto" class="hover:text-yellow-400 transition-colors">
+		  Contacto
+		</a>
+		<a href="#donate" class="hover:text-yellow-400 transition-colors">
+			Donativos
+		  </a>
+		  <div class="flex items-center space-x-4">
+			<button class="bg-yellow-400 p-2 rounded-md text-black hover:bg-yellow-500">Acceder</button>
+		  </div>
+	  </nav>
+	</div>
+</header>
+
+<style>
+.hidden-header {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+</style>
+
+<script is:inline>
+  const header = document.getElementById('main-header');
+  let scrollTimeout;
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
+
+
+    // Si estamos por debajo de 200vh => header siempre visible
+    if (scrollY < window.innerHeight * 0.9) {
+      header.classList.remove('hidden-header');
+      clearTimeout(scrollTimeout);
+      return; // No aplicar auto-hide
+    }
+
+    // Mostrar mientras se hace scroll
+    header.classList.remove('hidden-header');
+
+    // Ocultar después de 1.2s sin scroll
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      header.classList.add('hidden-header');
+    }, 1200);
+  });
+</script>

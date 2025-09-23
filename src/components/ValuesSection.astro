@@ -1,0 +1,60 @@
+---
+const values = [
+  {
+    number: "01",
+    title: "Fidelidad Bíblica",
+    description:
+      "La Palabra de Dios es nuestra única autoridad y regla de conducta y práctica.",
+  },
+  {
+    number: "02",
+    title: "Gracia y Verdad",
+    description:
+      "Modelamos el carácter de Cristo en la enseñanza y en el servicio.",
+  },
+  {
+    number: "03",
+    title: "Compromiso Misionero",
+    description:
+      "Formamos siervos dispuestos a llevar el Evangelio a todas partes.",
+  },
+  {
+    number: "04",
+    title: "Excelencia Académica",
+    description:
+      "Enseñamos con la Biblia, con seriedad y responsabilidad.",
+  },
+  {
+    number: "05",
+    title: "Servicio a la Iglesia",
+    description:
+      "Preparamos obreros para edificar el cuerpo de Cristo.",
+  },
+];
+
+---
+
+<section class="py-24 bg-black">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center space-y-4 mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold text-white">
+          Nuestros <span class="text-yellow-300">Valores</span>
+        </h2>
+        <p class="text-xl text-white max-w-3xl mx-auto leading-relaxed">
+          Los principios fundamentales que guían nuestra misión educativa y ministerial.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap  justify-center">
+        {values.map((value, index) => (
+          <div class="text-center space-y-6 w-[30%]">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-yellow-300 text-black rounded-full text-2xl font-bold">
+              {value.number}
+            </div>
+            <h3 class="text-3xl font-bold text-white">{value.title}</h3>
+            <p class="text-yellow-300 leading-relaxed text-lg">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,93 @@
+---
+
+const programs = [
+{
+    title: "Teología Sistemática",
+    description: "Estudio profundo de las doctrinas fundamentales de la fe cristiana",
+    duration: "2 años",
+    modality: "Presencial y Virtual",
+    features: ["Hermenéutica Bíblica", "Teología Pastoral", "Historia de la Iglesia"],
+  },
+  {
+    title: "Ministerio Pastoral",
+    description: "Formación integral para el liderazgo y cuidado pastoral",
+    duration: "3 años",
+    modality: "Presencial",
+    features: ["Consejería Bíblica", "Homilética", "Administración Eclesiástica"],
+  },
+  {
+    title: "Misiones Transculturales",
+    description: "Preparación para el ministerio misionero en diferentes culturas",
+    duration: "18 meses",
+    modality: "Intensivo",
+    features: ["Antropología Cultural", "Plantación de Iglesias", "Idiomas Bíblicos"],
+  },
+]
+--- 
+
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center space-y-4 mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold text-black">
+          Nuestros <span class="text-yellow-300">Programas</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          Ofrecemos programas académicos diseñados para formar líderes comprometidos con la Palabra de Dios y el
+          servicio al Reino.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {programs.map((program, index) => (
+          <div
+            class="border-2 rounded-2xl hover:border-yellow-400 transition-all duration-300 hover:shadow-xl bg-white"
+          >
+            {/* Header */}
+            <div class="space-y-4 p-6">
+              <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center">
+                <span class="text-black font-bold text-xl">{index + 1}</span>
+              </div>
+              <h3 class="text-2xl font-semibold text-black">{program.title}</h3>
+              <p class="text-gray-600 text-base leading-relaxed">
+                {program.description}
+              </p>
+            </div>
+        
+            {/* Content */}
+            <div class="space-y-6 p-6 pt-0">
+              {/* Info */}
+              <div class="space-y-2">
+                <div class="flex justify-between items-center">
+                  <span class="text-sm font-medium text-gray-500">Duración:</span>
+                  <span class="text-sm font-bold text-black">{program.duration}</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-sm font-medium text-gray-500">Modalidad:</span>
+                  <span class="text-sm font-bold text-black">{program.modality}</span>
+                </div>
+              </div>
+        
+              {/* Materias */}
+              <div class="space-y-2">
+                <h4 class="font-semibold text-black">Materias Destacadas:</h4>
+                <ul class="space-y-1">
+                  {program.features.map((feature, idx) => (
+                    <li class="text-sm text-gray-600 flex items-center">
+                      <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2"></span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+        
+              {/* Botón */}
+              <button class="w-full bg-black text-white rounded-xl py-2 hover:bg-gray-800 transition">
+                Más Información
+              </button>
+            </div>
+          </div>
+        ))}
+        
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,205 @@
+---
+const declaraciones = [
+{
+    titulo: "La Biblia",
+    texto:
+      "Creemos que toda la Escritura, tanto el Antiguo como el Nuevo Testamento, es la Palabra de Dios inspirada, inerrante e infalible; única regla de fe y práctica para el creyente.",
+    citas: "2 Timoteo 3:16-17; 2 Pedro 1:20-21; Salmo 119:89"
+  },
+  {
+    titulo: "Dios",
+    texto:
+      "Creemos en un solo Dios verdadero, eterno, creador de todas las cosas, que existe en tres personas: Padre, Hijo y Espíritu Santo; iguales en esencia, gloria y majestad, pero distintos en funciones.",
+    citas: "Deuteronomio 6:4; Mateo 28:19; 2 Corintios 13:14"
+  },
+  {
+    titulo: "Jesucristo",
+    texto:
+      "Creemos en Jesucristo, el Hijo eterno de Dios, concebido por obra del Espíritu Santo y nacido de María la virgen; verdadero Dios y verdadero hombre. Creemos en su vida sin pecado, en su muerte vicaria y expiatoria en la cruz, en su resurrección corporal al tercer día, en su ascensión al cielo y en su regreso personal y glorioso.",
+    citas: "Juan 1:1,14; Isaías 7:14; Mateo 1:18-23; 1 Corintios 15:3-4; Hechos 1:9-11"
+  },
+  {
+    titulo: "El Espíritu Santo",
+    texto:
+      "Creemos en el Espíritu Santo, quien convence de pecado, regenera aquellos que se arrepienten y creen por fe en Jesucristo, bautizando al creyente en el cuerpo de Cristo, mora en el creyente y lo capacita para vivir en santidad y servir al Señor.",
+    citas: "Juan 16:7-8; Hechos 20:21; 1 Corintios 12:13; Efesios 1:13-14; Gálatas 5:22-23"
+  },
+  {
+    titulo: "El Hombre y el Pecado",
+    texto:
+      "Creemos que el hombre fue creado a imagen y semejanza de Dios, pero cayó en pecado y quedó separado de Dios, muerto espiritualmente y sin posibilidad de salvarse por sí mismo.",
+    citas: "Génesis 1:26-27; Romanos 3:23; Romanos 5:12; Efesios 2:1"
+  },
+  {
+    titulo: "La Salvación",
+    texto:
+      "Creemos que la salvación es un regalo de Dios traído al hombre por gracia y recibido por el arrepentimiento de pecados y fe personal en el Señor Jesucristo, cuya preciosa sangre fue derramada en el Calvario para el perdón de nuestros pecados. Creemos en la seguridad eterna del creyente verdaderamente salvo.",
+    citas: "Efesios 2:8-9; Hechos 20:21; Juan 10:28-29; Romanos 8:1, 38-39; Romanos 10:9-10"
+  },
+  {
+    titulo: "La Iglesia",
+    texto:
+      "Creemos que la iglesia local, la cual es el cuerpo y la novia desposada de Cristo es formada únicamente de personas nacidas de nuevo. Creemos en la autonomía de la iglesia local libre de toda autoridad y control externo.",
+    citas: "I Cor. 12:12-14; II Cor. 11:2; Efes. 1:22-23; Efes. 5:25-27; Hechos 13:1-4; Hechos 15:19-31; Hechos 20:28"
+  },
+  {
+    titulo: "Separación",
+    texto:
+      "Creemos que todos los salvos deben vivir de tal manera que no traigan reproche a su Salvador y Señor, separándose de toda apostasía religiosa y prácticas pecaminosas.",
+    citas: "Rom. 12:1-2; 14:13; II Cor. 6:14-7:1; II Tim. 3:1-5; I Juan 2:15-17"
+  },
+  {
+    titulo: "Las Ordenanzas",
+    texto:
+      "Creemos que Cristo ordenó dos ordenanzas para la iglesia local: el bautismo en agua por inmersión y la Cena del Señor, memorial de su sacrificio.",
+    citas: "Mateo 28:19; Hechos 8:36-38; 1 Corintios 11:23-26"
+  },
+  {
+    titulo: "Las Últimas Cosas",
+    texto:
+      "Creemos en la inminente venida de Cristo por su iglesia, en la gran tribulación, el milenio literal, el juicio final y el estado eterno de gloria para los salvos y de condenación para los incrédulos.",
+    citas: "1 Tesalonicenses 4:16-17; Apocalipsis 20:1-6; Mateo 25:31-46"
+  },
+  {
+    titulo: "El Matrimonio y la Familia",
+    texto:
+      "Creemos que Dios instituyó el matrimonio como la unión sagrada y exclusiva entre un hombre y una mujer, y que la familia es el núcleo fundamental de la sociedad y de la iglesia.",
+    citas: "Génesis 2:18-24; Mateo 19:4-6; Efesios 5:22-25"
+  },
+  {
+    titulo: "El Aborto",
+    texto:
+      "Creemos que la vida humana comienza en el momento de la concepción y que el ser aun no nacido es un ser humano con vida. Rechazamos cualquier justificación para el aborto.",
+    citas: "Job 3:16; Salmo 51:5; 139:14-16; Isaías 44:24; Jeremías 1:5"
+  },
+  {
+    titulo: "Gobierno y Deber Civil",
+    texto:
+      "Creemos que Dios ha ordenado tres instituciones básicas: el hogar, la iglesia y el estado. Cada persona debe someterse a estas autoridades según la Palabra de Dios.",
+    citas: "Romanos 13:1-7; Efesios 5:22-24; Hebreos 13:17; 1 Pedro 2:13-14"
+  },
+  {
+    titulo: "Misiones",
+    texto:
+      "Creemos que Dios ha dado a la iglesia la gran comisión de proclamar el evangelio a todas las naciones, usando todos los medios disponibles.",
+    citas: "Mateo 28:19-20; Marcos 16:15; Hechos 1:8"
+  },
+  {
+    titulo: "El Dar",
+    texto:
+      "Creemos que cada cristiano es mayordomo de los bienes que Dios le ha confiado y debe dar con gozo para el sostenimiento de la iglesia y la propagación del evangelio.",
+    citas: "Gn. 14:20; Prov. 3:9-10; I Cor. 16:2; II Cor. 9:6-7"
+  }
+];
+
+---
+
+
+<section class="bg-black text-yellow-400 py-16 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-10">Declaración de Fe</h2>
+
+    <div class="relative overflow-hidden">
+      <div id="carousel-track" class="flex transition-transform duration-500">
+        {declaraciones.map((item) => (
+          <div class="flex-shrink-0 w-full p-6 border border-yellow-400 rounded-xl box-border">
+            <h3 class="text-2xl font-bold mb-3">{item.titulo}</h3>
+            <p class="text-base mb-3 leading-relaxed">{item.texto}</p>
+            <span class="block text-sm opacity-70 italic">{item.citas}</span>
+          </div>
+        ))}
+      </div>
+
+      <!-- Botones -->
+      <button
+        id="prevBtn"
+        class="absolute left-2 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-yellow-400 text-black rounded-full hover:bg-yellow-300"
+      >
+        ⬅
+      </button>
+      <button
+        id="nextBtn"
+        class="absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-yellow-400 text-black rounded-full hover:bg-yellow-300"
+      >
+        ➡
+      </button>
+
+      <!-- Indicadores -->
+      <div class="flex justify-center gap-2 mt-4">
+        {declaraciones.map((_, i) => (
+          <button class="w-3 h-3 rounded-full bg-yellow-700 opacity-50 dot" data-index={i}></button>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const track = document.getElementById("carousel-track") as HTMLDivElement | null;
+const items = track?.children as HTMLCollectionOf<HTMLDivElement> | undefined;
+const dots = document.querySelectorAll<HTMLButtonElement>(".dot");
+
+let currentIndex = 0;
+let interval: ReturnType<typeof setInterval>;
+
+const updateCarousel = (index: number) => {
+  if (!track || !items) return;
+  const slideWidth = items[0].offsetWidth;
+  track.style.transform = `translateX(-${index * slideWidth}px)`;
+  
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("opacity-100", i === index);
+    dot.classList.toggle("opacity-50", i !== index);
+  });
+};
+
+const nextSlide = () => {
+  if (!items) return;
+  currentIndex = (currentIndex + 1) % items.length;
+  updateCarousel(currentIndex);
+};
+
+const prevSlide = () => {
+  if (!items) return;
+  currentIndex = (currentIndex - 1 + items.length) % items.length;
+  updateCarousel(currentIndex);
+};
+
+// Botones
+document.getElementById("nextBtn")?.addEventListener("click", () => {
+  nextSlide();
+  resetInterval();
+});
+
+document.getElementById("prevBtn")?.addEventListener("click", () => {
+  prevSlide();
+  resetInterval();
+});
+
+// Dots
+dots.forEach((dot) => {
+  dot.addEventListener("click", () => {
+    const index = parseInt(dot.dataset.index || "0", 10);
+    currentIndex = index;
+    updateCarousel(currentIndex);
+    resetInterval();
+  });
+});
+
+// Auto slide
+const startInterval = () => {
+  interval = setInterval(nextSlide, 5000);
+};
+
+const resetInterval = () => {
+  clearInterval(interval);
+  startInterval();
+};
+
+// Recalcular al cambiar tamaño
+window.addEventListener("resize", () => updateCarousel(currentIndex));
+
+updateCarousel(currentIndex);
+startInterval();
+
+</script>

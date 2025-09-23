@@ -1,11 +1,26 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import ValuesSection from "../components/ValuesSection.astro"
+import  Header  from "../components/Header.astro"
+import  HeroSection from "../components/HeroSection.astro"
+import  ProgramsSection from "../components/ProgramsSection.astro"
+import  CTASection from "../components/cta-section.astro"
+import  MisionVisionSection from "../components/MisionVisionSection.astro"
+import  ContactUsSection from "../components/ContactUsSection.astro"
+import  ModalSuscriptionSection from "../components/ModalSuscriptionSection.astro"
+import DeclarationsSection from "../components/DeclarationsSection.astro"
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Mi Sitio</title>
+  </head>
+      <Header />
+      <HeroSection />
+	  <ProgramsSection />
+	  <ValuesSection />
+	  <CTASection />
+	  <MisionVisionSection />
+	  <DeclarationsSection />
+	  <ContactUsSection />
 
-<Layout>
-	<Welcome />
-</Layout>
