@@ -3,40 +3,48 @@ import "../styles/global.css";
 import Logo from "../assets/logo.jpeg"
 ---
 
-<header id="main-header" class="bg-black w-full text-white py-4 px-6 fixed z-50 transition-all duration-300">
-	<div class="max-w-7xl mx-auto flex items-center justify-between">
-	  <div class="flex items-center space-x-4">
-		<div class="flex items-center space-x-2">
-		  <div class="w-40 h-40 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center">
-			<img class="w-40 h-40 rounded-md object-cover" src={Logo.src} alt="">
-		  </div>
-		</div>
-	  </div>
+<header id="main-header" class="bg-black w-full text-white py-3 px-4 md:px-6 fixed top-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- LOGO -->
+    <div class="flex items-center space-x-2">
+      <div class="w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center">
+        <img class="w-full h-full rounded-md object-cover" src={Logo.src} alt="Logo">
+      </div>
+    </div>
 
-	  <nav class="hidden md:flex items-center space-x-8">
-		<a href="#inicio" class="hover:text-yellow-400 transition-colors">
-		  Inicio
-		</a>
-		<a href="#programas" class="hover:text-yellow-400 transition-colors">
-		  Programas
-		</a>
-		<a href="#recursos" class="hover:text-yellow-400 transition-colors">
-		  Recursos
-		</a>
-		<a href="#nosotros" class="hover:text-yellow-400 transition-colors">
-		  Nosotros
-		</a>
-		<a href="#contacto" class="hover:text-yellow-400 transition-colors">
-		  Contacto
-		</a>
-		<a href="#donate" class="hover:text-yellow-400 transition-colors">
-			Donativos
-		  </a>
-		  <div class="flex items-center space-x-4">
-			<button class="bg-yellow-400 p-2 rounded-md text-black hover:bg-yellow-500">Acceder</button>
-		  </div>
-	  </nav>
-	</div>
+    <!-- DESKTOP NAV -->
+    <nav class="hidden md:flex items-center space-x-8 text-base">
+      <a href="#inicio" class="hover:text-yellow-400 transition-colors">Inicio</a>
+      <a href="#programas" class="hover:text-yellow-400 transition-colors">Programas</a>
+      <a href="#recursos" class="hover:text-yellow-400 transition-colors">Recursos</a>
+      <a href="#nosotros" class="hover:text-yellow-400 transition-colors">Nosotros</a>
+      <a href="#contacto" class="hover:text-yellow-400 transition-colors">Contacto</a>
+      <a href="#donate" class="hover:text-yellow-400 transition-colors">Donativos</a>
+      <button class="bg-yellow-400 px-4 py-2 rounded-md text-black hover:bg-yellow-500 transition">
+        Acceder
+      </button>
+    </nav>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button id="menu-btn" class="md:hidden flex flex-col justify-center space-y-1">
+      <span class="block w-6 h-0.5 bg-white"></span>
+      <span class="block w-6 h-0.5 bg-white"></span>
+      <span class="block w-6 h-0.5 bg-white"></span>
+    </button>
+  </div>
+
+  <!-- MOBILE NAV -->
+  <nav id="mobile-menu" class="hidden flex-col space-y-4 bg-black px-6 pb-4 pt-4 text-lg md:hidden">
+    <a href="#inicio" class="hover:text-yellow-400 transition-colors">Inicio</a>
+    <a href="#programas" class="hover:text-yellow-400 transition-colors">Programas</a>
+    <a href="#recursos" class="hover:text-yellow-400 transition-colors">Recursos</a>
+    <a href="#nosotros" class="hover:text-yellow-400 transition-colors">Nosotros</a>
+    <a href="#contacto" class="hover:text-yellow-400 transition-colors">Contacto</a>
+    <a href="#donate" class="hover:text-yellow-400 transition-colors">Donativos</a>
+    <button class="bg-yellow-400 px-4 py-2 rounded-md text-black hover:bg-yellow-500 transition">
+      Acceder
+    </button>
+  </nav>
 </header>
 
 <style>
@@ -45,31 +53,48 @@ import Logo from "../assets/logo.jpeg"
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
+#mobile-menu.show {
+  display: flex;
+  animation: slideDown 0.3s ease forwards;
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>
 
 <script is:inline>
   const header = document.getElementById('main-header');
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
   let scrollTimeout;
 
+  // Mostrar/ocultar header según scroll SOLO en desktop
   window.addEventListener('scroll', () => {
+    // Si estamos en pantallas menores a 768px (mobile), no ocultar header
+    if (window.innerWidth < 768) return;
+
     const scrollY = window.scrollY;
-
-
-
-    // Si estamos por debajo de 200vh => header siempre visible
     if (scrollY < window.innerHeight * 0.9) {
       header.classList.remove('hidden-header');
       clearTimeout(scrollTimeout);
-      return; // No aplicar auto-hide
+      return;
     }
-
-    // Mostrar mientras se hace scroll
     header.classList.remove('hidden-header');
-
-    // Ocultar después de 1.2s sin scroll
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
       header.classList.add('hidden-header');
     }, 1200);
+  });
+
+  // Toggle menú móvil
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('show');
   });
 </script>
