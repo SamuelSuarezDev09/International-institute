@@ -47,9 +47,9 @@ const values = [
     </div>
 
     <!-- Grid Responsive -->
-    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+    <div class="flex flex-wrap justify-center gap-4">
       {values.map((value) => (
-        <div class="text-center space-y-6 flex flex-col items-center">
+        <div class="text-center w-[45%] md:w-[30%] space-y-6 flex flex-col items-center">
           <div class="inline-flex items-center justify-center w-20 h-20 bg-yellow-300 text-black rounded-full text-2xl font-bold">
             {value.number}
           </div>

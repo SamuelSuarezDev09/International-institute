@@ -1,0 +1,49 @@
+---
+import Director from "../assets/director.jpeg";
+import AdministrativeDirector from "../assets/administrative-director.jpeg";
+import Dean from "../assets/dean.jpeg";
+
+const personas = [
+  {
+    ocupacion: "Director",
+    imagen: Director.src,
+  },
+  {
+    ocupacion: "Director Administrativo",
+    imagen: AdministrativeDirector.src,
+  },
+  {
+    ocupacion: "Decano Académico",
+    imagen: Dean.src,
+  },
+];
+---
+
+<section class="bg-white py-20 px-6">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl font-extrabold mb-16">
+      <span class="text-black">Nuestro</span>
+      <span class="text-yellow-500"> Equipo</span>
+    </h2>
+
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+      {personas.map((p) => (
+        <li class="group bg-white rounded-2xl shadow-md hover:shadow-xl hover:shadow-yellow-200/50 transition duration-300 p-8 flex flex-col items-center border border-yellow-200/70">
+          <div class="relative w-40 h-40 mb-6">
+            <img
+              src={p.imagen}
+              alt={p.ocupacion}
+              class="w-full h-full object-cover rounded-full border-4 border-yellow-400 shadow-md group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+            <span class="absolute inset-0 rounded-full border border-yellow-300 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+          </div>
+
+          <p class="text-lg font-semibold text-gray-900 tracking-wide">
+            {p.ocupacion}
+          </p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

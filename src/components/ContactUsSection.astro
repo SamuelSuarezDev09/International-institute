@@ -1,5 +1,3 @@
----
----
 <section class="mt-20 mb-20">
   <div class="max-w-[1600px] mx-auto px-6 md:px-10">
     <div class="text-center max-w-2xl mx-auto">
@@ -12,27 +10,41 @@
     <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10">
       <!-- Formulario -->
       <div class="md:col-span-2 bg-white rounded-3xl shadow-lg p-8">
-        <form class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <form 
+          action="https://formspree.io/f/mpwyzozy"
+          method="POST"
+          accept-charset="UTF-8"
+          class="grid grid-cols-1 sm:grid-cols-2 gap-6"
+        >
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-            <input type="text" placeholder="Tu nombre"
+            <input name="Nombre" type="text" required placeholder="Tu nombre"
               class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-yellow-400 focus:outline-none" />
           </div>
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">Correo</label>
-            <input type="email" placeholder="tu@correo.com"
+            <input name="Correo" type="email" required placeholder="tu@correo.com"
               class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-yellow-400 focus:outline-none" />
           </div>
+
+          <!-- Teléfono -->
+          <div class="sm:col-span-2">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
+            <input name="Teléfono" type="tel" placeholder="+57 300 0000000"
+              class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-yellow-400 focus:outline-none" />
+          </div>
+
           <div class="sm:col-span-2">
             <label class="block text-sm font-medium text-gray-700 mb-1">Asunto</label>
-            <input type="text" placeholder="Motivo de tu mensaje"
+            <input name="Asunto" type="text" required placeholder="Motivo de tu mensaje"
               class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-yellow-400 focus:outline-none" />
           </div>
           <div class="sm:col-span-2">
             <label class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
-            <textarea rows="5" placeholder="Escribe tu mensaje aquí"
+            <textarea name="Mensaje" rows="5" required placeholder="Escribe tu mensaje aquí"
               class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-yellow-400 focus:outline-none"></textarea>
           </div>
+
           <div class="sm:col-span-2">
             <button type="submit"
               class="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-4 rounded-xl shadow-md transition-all">
@@ -43,38 +55,53 @@
       </div>
 
       <!-- Info lateral -->
-      <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-3xl p-8 shadow-lg flex flex-col justify-between">
+      <div class="bg-gradient-to-br h-2/3 from-yellow-50 to-yellow-100 rounded-3xl p-6 shadow-lg flex flex-col items-center text-center max-w-md mx-auto">
         <div>
           <h3 class="text-2xl font-bold text-gray-900">Información de contacto</h3>
           <p class="mt-4 text-gray-700">
-            Extensión Av. San Martín con Avenida Uslar, Urb. Vista Alegre. Caracas, Venezuela 1020
+            Dirección: 📍 2612 Williams St. Nacogdoches Tx, 75964
           </p>
           <p class="mt-3">
-            <a href="mailto:admision@sebel.org" class="text-yellow-600 font-semibold hover:underline">
-              admision@sebel.org
+            Email: 
+            <a href="mailto:administracion@ibgyv.org" class="text-yellow-600 font-semibold hover:underline">
+              administracion@ibgv.org
             </a>
           </p>
-          <p class="mt-1 text-gray-700">Tel: +58 212-555-1234</p>
+      
+          <div class="flex flex-col items-center mt-3">
+            <p class="font-medium">Tel:</p>
+            <div class="flex flex-col">
+              <p class="text-gray-700">📞 +1 (936) 552-6419</p>
+              <p class="text-gray-700">📞 +57 312 5506197</p>
+              <p class="text-gray-700">📞 +57 311 2648297</p>
+            </div>
+          </div>
         </div>
-
+      
         <!-- Redes sociales -->
-        <div class="mt-8 flex gap-4">
-          <a href="#" class="p-3 bg-white rounded-xl shadow hover:scale-105 transition">
-            <svg class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24"><path
-                d="M22.675 0h-21.35C.597 0 0 .6 0 1.338v21.324C0 23.4.597 24 1.325 24h11.498v-9.293H9.691V11.07h3.132V8.412c0-3.1 1.893-4.788 4.658-4.788 1.325 0 2.464.098 2.796.142v3.24h-1.918c-1.504 0-1.795.715-1.795 1.764v2.3h3.588l-.467 3.638h-3.12V24h6.116C23.403 24 24 23.4 24 22.662V1.338C24 .6 23.403 0 22.675 0"></path></svg>
+        <div class="mt-6 flex gap-4 justify-center">
+          <!-- Facebook -->
+          <a href="https://facebook.com/tu-pagina" target="_blank" class="p-3 bg-white rounded-xl shadow hover:scale-105 transition">
+            <svg class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22.675 0h-21.35C.597 0 0 .6 0 1.338v21.324C0 23.4.597 24 1.325 24h11.498v-9.293H9.691V11.07h3.132V8.412c0-3.1 1.893-4.788 4.658-4.788 1.325 0 2.464.098 2.796.142v3.24h-1.918c-1.504 0-1.795.715-1.795 1.764v2.3h3.588l-.467 3.638h-3.12V24h6.116C23.403 24 24 23.4 24 22.662V1.338C24 .6 23.403 0 22.675 0"/>
+            </svg>
           </a>
-          <a href="#" class="p-3 bg-white rounded-xl shadow hover:scale-105 transition">
-            <svg class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24"><path
-                d="M23.953 4.57a10 10 0 01-2.825.775 4.93 4.93 0 002.163-2.724c-.951.56-2.005.97-3.127 1.184a4.918 4.918 0 00-8.384 4.482A13.978 13.978 0 011.67 3.149a4.822 4.822 0 001.523 6.574 4.903 4.903 0 01-2.228-.616v.06a4.928 4.928 0 003.946 4.827 4.996 4.996 0 01-2.224.084 4.936 4.936 0 004.604 3.417A9.867 9.867 0 010 19.54a13.94 13.94 0 007.548 2.212c9.055 0 14-7.496 14-13.986 0-.21 0-.423-.015-.634A9.936 9.936 0 0024 4.59z"></path></svg>
+        
+          <!-- Instagram -->
+          <a href="https://instagram.com/tu-pagina" target="_blank" class="p-3 bg-white rounded-xl shadow hover:scale-105 transition">
+            <svg class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 110 10.5 5.25 5.25 0 010-10.5zm0 1.5a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zm5.5-.88a.88.88 0 110 1.76.88.88 0 010-1.76z"/>
+            </svg>
           </a>
-          <a href="#" class="p-3 bg-white rounded-xl shadow hover:scale-105 transition">
-            <svg class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24"><path
-                d="M12 2.04c-5.52 0-9.96 4.44-9.96 9.96 0 4.4 2.86 8.14 6.84 9.48.5.1.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.1-1.45-1.1-1.45-.9-.62.07-.61.07-.61 1 .07 1.53 1.02 1.53 1.02.89 1.53 2.34 1.09 2.91.84.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.99 1.02-2.69-.1-.25-.44-1.27.1-2.65 0 0 .83-.26 2.73 1.02A9.5 9.5 0 0112 6.8c.84.01 1.69.11 2.49.33 1.9-1.28 2.73-1.02 2.73-1.02.54 1.38.2 2.4.1 2.65.63.7 1.02 1.6 1.02 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.69.92.69 1.86 0 1.34-.01 2.43-.01 2.76 0 .26.18.58.69.48A9.96 9.96 0 0022 12c0-5.52-4.48-9.96-10-9.96z"></path></svg>
+        
+          <!-- YouTube -->
+          <a href="https://youtube.com/@tu-canal" target="_blank" class="p-3 bg-white rounded-xl shadow hover:scale-105 transition">
+            <svg class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a2.97 2.97 0 00-2.09-2.102C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.408.584a2.97 2.97 0 00-2.09 2.102A31.52 31.52 0 000 12a31.52 31.52 0 00.502 5.814 2.97 2.97 0 002.09 2.102C4.495 20.5 12 20.5 12 20.5s7.505 0 9.408-.584a2.97 2.97 0 002.09-2.102A31.52 31.52 0 0024 12a31.52 31.52 0 00-.502-5.814zM9.75 15.02V8.98l6.5 3.02-6.5 3.02z"/>
+            </svg>
           </a>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-  
