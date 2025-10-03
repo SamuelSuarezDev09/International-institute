@@ -4,6 +4,7 @@ import ModalSuscriptionSection from "./ModalSuscriptionSection.astro";
 ---
 
 <section 
+id="inicio"
   class="relative bg-black w-screen text-white min-h-screen flex items-center"
   style="background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/biblical-study-books-and-cross-on-wooden-desk-with-RPJx04UJmMwpyxuvePkt6p1dc5bcqF.jpg'); background-size: cover; background-position: center;">
   
@@ -36,28 +37,31 @@ import ModalSuscriptionSection from "./ModalSuscriptionSection.astro";
 
       <!-- Botones -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-        <ModalSuscriptionSection />
-        <a href="#contacto"
-           class="border border-white text-white hover:bg-white hover:text-black text-lg px-6 py-3 rounded transition-colors duration-200 text-center">
+        <button 
+          data-scroll="contacto"
+          class="border w-80 h-16 border-yellow-500 text-yellow-500 hover:bg-white  text-lg px-6 py-3 rounded transition-colors duration-200 text-center">
           Conocer Más
-        </a>
+        </button>
       </div>
-
-      <!-- Estadísticas -->
-   <!--    <div class="flex flex-col sm:flex-row sm:justify-center lg:justify-start sm:space-x-8 space-y-6 sm:space-y-0 pt-8" id="programas">
-        <div class="text-center">
-          <div class="text-3xl md:text-4xl font-bold text-yellow-400">500+</div>
-          <div class="text-sm md:text-base text-gray-400">Graduados</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl md:text-4xl font-bold text-yellow-400">25+</div>
-          <div class="text-sm md:text-base text-gray-400">Años de Experiencia</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl md:text-4xl font-bold text-yellow-400">15+</div>
-          <div class="text-sm md:text-base text-gray-400">Países Alcanzados</div>
-        </div>
-      </div> -->
     </div>
   </div>
 </section>
+
+<script is:inline>
+  const scrollButtons = document.querySelectorAll("[data-scroll]");
+
+  scrollButtons.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const targetId = e.currentTarget.getAttribute("data-scroll");
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      // calcular offset dinámico en base al header
+      const header = document.getElementById("main-header");
+      const yOffset = header ? -(header.offsetHeight + 20) : -80;
+      const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
+    });
+  });
+</script>

@@ -1,32 +1,54 @@
 ---
 import "../styles/global.css";
-import Logo from "../assets/logo.jpeg"
+import Logo from "../assets/logo.jpeg";
 ---
 
-<header id="main-header" class="bg-black w-full text-white py-3 px-4 md:px-6 fixed top-0 z-50 transition-all duration-300">
-  <div class="max-w-7xl mx-auto flex items-center justify-between">
+<header
+  id="main-header"
+  class="bg-black w-full text-white py-3 px-4 md:px-6 fixed top-0 z-50 transition-all duration-300"
+>
+  <div class="max-w-7lg mx-auto flex items-center justify-between">
     <!-- LOGO -->
-    <div class="flex items-center space-x-2">
-      <div class="w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center">
-        <img class="w-full h-full rounded-md object-cover" src={Logo.src} alt="Logo">
+    <div data-scroll="inicio" class="flex items-center space-x-2">
+      <div
+        class="w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center"
+      >
+        <img
+          class="w-full h-full rounded-md object-cover"
+          src={Logo.src}
+          alt="Logo"
+        />
       </div>
     </div>
 
     <!-- DESKTOP NAV -->
-    <nav class="hidden md:flex items-center space-x-8 text-base">
-      <a href="#inicio" class="hover:text-yellow-400 transition-colors">Inicio</a>
-      <a href="#programas" class="hover:text-yellow-400 transition-colors">Programas</a>
-      <a href="#recursos" class="hover:text-yellow-400 transition-colors">Recursos</a>
-      <a href="#nosotros" class="hover:text-yellow-400 transition-colors">Nosotros</a>
-      <a href="#contacto" class="hover:text-yellow-400 transition-colors">Contacto</a>
-      <a href="#donate" class="hover:text-yellow-400 transition-colors">Donativos</a>
-      <button class="bg-yellow-400 px-4 py-2 rounded-md text-black hover:bg-yellow-500 transition">
-        Acceder
+    <nav class="hidden lg:flex items-center space-x-8 text-base">
+      <button data-scroll="inicio" class="hover:text-yellow-400 transition-colors">Inicio</button>
+      <button data-scroll="programas" class="hover:text-yellow-400 transition-colors">Programas</button>
+      <button data-scroll="recursos" class="hover:text-yellow-400 transition-colors">Recursos</button>
+      <button data-scroll="nosotros" class="hover:text-yellow-400 transition-colors">Nosotros</button>
+      <button data-scroll="contacto" class="hover:text-yellow-400 transition-colors">Contacto</button>
+      <button data-scroll="donate" class="hover:text-yellow-400 transition-colors">Donativos</button>
+      
+      <a
+        class="bg-yellow-400 text-sm cursor-pointer h-full px-4 py-3 rounded-md text-black hover:bg-yellow-500 transition"
+        target="_blank"
+        href="https://drive.google.com/drive/u/4/home"
+      >
+        Ingreso maestros
+      </a>
+      
+      <!-- Botón que abre el modal -->
+      <button
+        id="open-student-modal"
+        class="bg-yellow-400 text-sm cursor-pointer h-full px-4 py-3 rounded-md text-black hover:bg-yellow-500 transition"
+      >
+        Ingreso Estudiantes
       </button>
     </nav>
 
     <!-- MOBILE MENU BUTTON -->
-    <button id="menu-btn" class="md:hidden flex flex-col justify-center space-y-1">
+    <button id="menu-btn" class="lg:hidden flex flex-col justify-center space-y-1">
       <span class="block w-6 h-0.5 bg-white"></span>
       <span class="block w-6 h-0.5 bg-white"></span>
       <span class="block w-6 h-0.5 bg-white"></span>
@@ -34,67 +56,84 @@ import Logo from "../assets/logo.jpeg"
   </div>
 
   <!-- MOBILE NAV -->
-  <nav id="mobile-menu" class="hidden flex-col space-y-4 bg-black px-6 pb-4 pt-4 text-lg md:hidden">
-    <a href="#inicio" class="hover:text-yellow-400 transition-colors">Inicio</a>
-    <a href="#programas" class="hover:text-yellow-400 transition-colors">Programas</a>
-    <a href="#recursos" class="hover:text-yellow-400 transition-colors">Recursos</a>
-    <a href="#nosotros" class="hover:text-yellow-400 transition-colors">Nosotros</a>
-    <a href="#contacto" class="hover:text-yellow-400 transition-colors">Contacto</a>
-    <a href="#donate" class="hover:text-yellow-400 transition-colors">Donativos</a>
+  <nav
+    id="mobile-menu"
+    class="hidden flex-col space-y-4 bg-black px-6 pb-4 pt-4 text-lg lg:hidden"
+  >
+    <button data-scroll="inicio" class="hover:text-yellow-400 transition-colors">Inicio</button>
+    <button data-scroll="programas" class="hover:text-yellow-400 transition-colors">Programas</button>
+    <button data-scroll="recursos" class="hover:text-yellow-400 transition-colors">Recursos</button>
+    <button data-scroll="nosotros" class="hover:text-yellow-400 transition-colors">Nosotros</button>
+    <button data-scroll="contacto" class="hover:text-yellow-400 transition-colors">Contacto</button>
+    <button data-scroll="donate" class="hover:text-yellow-400 transition-colors">Donativos</button>
+    
     <button class="bg-yellow-400 px-4 py-2 rounded-md text-black hover:bg-yellow-500 transition">
-      Acceder
+      <a class="text-base" target="_blank" href="https://drive.google.com/drive/u/4/home">Ingreso maestros</a>
+    </button>
+
+    <button
+      id="open-student-modal-mobile"
+      class="bg-yellow-400 px-4 py-2 rounded-md text-black hover:bg-yellow-500 transition"
+    >
+      Ingreso Estudiantes
     </button>
   </nav>
 </header>
 
-<style>
-.hidden-header {
-  transform: translateY(-100%);
-  opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-#mobile-menu.show {
-  display: flex;
-  animation: slideDown 0.3s ease forwards;
-}
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-</style>
+<!-- MODAL -->
+<div
+  id="student-modal"
+  class="fixed inset-0 hidden bg-black bg-opacity-80 flex items-center justify-center z-50"
+>
+  <div class="bg-white rounded-lg shadow-lg p-6 max-w-md w-full text-center">
+    <h2 class="text-lg font-semibold mb-4">Aviso</h2>
+    <p class="text-gray-700 mb-6">
+      Para ingresar a Classroom, abre el enlace con tu cuenta de <b>@ibgyv.com</b>.
+    </p>
+    <div class="flex justify-center space-x-4">
+      <button
+        id="close-student-modal"
+        class="bg-gray-400 px-4 py-2 rounded-md text-white hover:bg-gray-500 transition"
+      >
+        Cerrar
+      </button>
+      <a
+        href="https://classroom.google.com/u/5/?pli=1"
+        target="_blank"
+        class="bg-yellow-400 px-4 py-2 rounded-md text-black hover:bg-yellow-500 transition"
+      >
+        Ir a Classroom
+      </a>
+    </div>
+  </div>
+</div>
 
 <script is:inline>
-  const header = document.getElementById('main-header');
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  let scrollTimeout;
+  const modal = document.getElementById("student-modal");
+  const openBtn = document.getElementById("open-student-modal");
+  const openBtnMobile = document.getElementById("open-student-modal-mobile");
+  const closeBtn = document.getElementById("close-student-modal");
 
-  // Mostrar/ocultar header según scroll SOLO en desktop
-  window.addEventListener('scroll', () => {
-    // Si estamos en pantallas menores a 768px (mobile), no ocultar header
-    if (window.innerWidth < 768) return;
+  if (openBtn) {
+    openBtn.addEventListener("click", () => {
+      modal.classList.remove("hidden");
+    });
+  }
+  if (openBtnMobile) {
+    openBtnMobile.addEventListener("click", () => {
+      modal.classList.remove("hidden");
+    });
+  }
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      modal.classList.add("hidden");
+    });
+  }
 
-    const scrollY = window.scrollY;
-    if (scrollY < window.innerHeight * 0.9) {
-      header.classList.remove('hidden-header');
-      clearTimeout(scrollTimeout);
-      return;
+  // Cerrar al hacer click fuera del modal
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.add("hidden");
     }
-    header.classList.remove('hidden-header');
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-      header.classList.add('hidden-header');
-    }, 1200);
-  });
-
-  // Toggle menú móvil
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('show');
   });
 </script>

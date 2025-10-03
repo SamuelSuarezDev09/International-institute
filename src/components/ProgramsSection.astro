@@ -1,31 +1,39 @@
 ---
 
 const programs = [
-{
-    title: "Teología Sistemática",
-    description: "Estudio profundo de las doctrinas fundamentales de la fe cristiana",
-    duration: "2 años",
-    modality: "Presencial y Virtual",
-    features: ["Hermenéutica Bíblica", "Teología Pastoral", "Historia de la Iglesia"],
+  {
+    title: "Teología Básica",
+    description: "Fundamentos esenciales de la teología cristiana",
+    duration: "8 meses",
+    modality: "Virtual",
+    features: ["Doctrina de Dios", "Cristología", "Soteriología"],
   },
   {
-    title: "Ministerio Pastoral",
-    description: "Formación integral para el liderazgo y cuidado pastoral",
-    duration: "3 años",
-    modality: "Presencial",
-    features: ["Consejería Bíblica", "Homilética", "Administración Eclesiástica"],
+    title: "Teología Intermedia",
+    description: "Profundización en las doctrinas y principios bíblicos",
+    duration: "16 meses",
+    modality: "Virtual",
+    features: ["Eclesiología", "Escatología", "Ética Cristiana"],
   },
   {
-    title: "Misiones Transculturales",
-    description: "Preparación para el ministerio misionero en diferentes culturas",
-    duration: "18 meses",
-    modality: "Intensivo",
-    features: ["Antropología Cultural", "Plantación de Iglesias", "Idiomas Bíblicos"],
+    title: "Teología Avanzada",
+    description: "Estudio académico avanzado en teología y ministerio",
+    duration: "24 meses",
+    modality: "Virtual",
+    features: ["Apologética", "Teología Contemporánea", "Exégesis Avanzada"],
+  },
+  {
+    title: "Cursos Especializados",
+    description: "Cursos adicionales en áreas específicas de formación bíblica",
+    duration: "Variable",
+    modality: "Virtual o Presencial",
+    features: ["Griego", "Hebreo", "Evangelismo", "Misiones"],
   },
 ]
+
 --- 
 
-  <section class="py-24 bg-white">
+  <section  id="programas"  class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center space-y-4 mb-16">
         <h2 class="text-4xl lg:text-5xl font-bold text-black">
@@ -80,10 +88,6 @@ const programs = [
                 </ul>
               </div>
         
-              {/* Botón */}
-              <button class="w-full bg-black text-white rounded-xl py-2 hover:bg-gray-800 transition">
-                Más Información
-              </button>
             </div>
           </div>
         ))}

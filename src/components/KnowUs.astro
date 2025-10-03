@@ -2,24 +2,51 @@
 import Director from "../assets/director.jpeg";
 import AdministrativeDirector from "../assets/administrative-director.jpeg";
 import Dean from "../assets/dean.jpeg";
+import Pastor1 from "../assets/hugo-mendoza.jpeg";
+import Pastor2 from "../assets/enrique-perez.jpeg";
+import Pastor3 from "../assets/noe-madrid.jpeg";
+import Pastor4 from "../assets/ivan-dominguez.jpeg";
 
 const personas = [
   {
-    ocupacion: "Director",
+    ocupacion: "Julio Colegio",
+    cargo: "Director General",
     imagen: Director.src,
   },
   {
-    ocupacion: "Director Administrativo",
+    ocupacion: "Cristian Alvarado",
+    cargo: "Director Administrativo",
     imagen: AdministrativeDirector.src,
   },
   {
-    ocupacion: "Decano Académico",
+    ocupacion: "Ricardo Padilla",
+    cargo: "Decano Académico",
     imagen: Dean.src,
+  },
+  {
+    ocupacion: "Pastor Hugo Mendoza",
+    cargo: "Maestro",
+    imagen: Pastor1.src,
+  },
+  {
+    ocupacion: "Pastor Enrique Pérez",
+    cargo: "Maestro",
+    imagen: Pastor2.src,
+  },
+  {
+    ocupacion: "Pastor Noé Madrid",
+    cargo: "Maestro",
+    imagen: Pastor3.src,
+  },
+  {
+    ocupacion: "Pastor Iván Dominguez",
+    cargo: "Maestro",
+    imagen: Pastor4.src,
   },
 ];
 ---
 
-<section class="bg-white py-20 px-6">
+<section  id="nosotros"  class="bg-white py-20 px-6">
   <div class="max-w-6xl mx-auto text-center">
     <h2 class="text-4xl font-extrabold mb-16">
       <span class="text-black">Nuestro</span>
@@ -39,9 +66,12 @@ const personas = [
             <span class="absolute inset-0 rounded-full border border-yellow-300 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
           </div>
 
-          <p class="text-lg font-semibold text-gray-900 tracking-wide">
-            {p.ocupacion}
-          </p>
+          <div class="text-center">
+            <p class="text-lg font-semibold text-gray-900 tracking-wide">
+              {p.ocupacion}
+            </p>
+            <p class="text-sm text-gray-600">{p.cargo}</p>
+          </div>
         </li>
       ))}
     </ul>
